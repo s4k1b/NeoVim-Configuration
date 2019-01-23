@@ -17,6 +17,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-commentary'
 "" Color
 Plugin 'tomasr/molokai'
+" Plugin 'rainglow/vim'
+" Plugin 'rafi/awesome-vim-colorschemes'
+" Plugin 'NLKNguyen/papercolor-theme'
 "" NerdTree
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -191,9 +194,16 @@ set ruler
 set number
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  colorscheme molokai
-endif
+set background=dark
+colorscheme molokai
+" let g:PaperColor_Theme_Options = {
+"   \   'theme': {
+"   \     'default': {
+"   \       'transparent_background': 1
+"   \     }
+"   \   }
+"   \ }
+
 "Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -229,8 +239,8 @@ set scrolloff=3
 set laststatus=2
 
 "" Use modeline overrides
-set modeline
-set modelines=10
+" set modeline
+" set modelines=10
 
 set title
 set titleold="Terminal"
