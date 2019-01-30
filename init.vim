@@ -16,10 +16,13 @@ Plugin 'vim-airline/vim-airline-themes'
 "Vim commentary
 Plugin 'tpope/vim-commentary'
 "" Color
-Plugin 'tomasr/molokai'
+" Plugin 'tomasr/molokai'
 " Plugin 'rainglow/vim'
 " Plugin 'rafi/awesome-vim-colorschemes'
 " Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'morhetz/gruvbox'
+" Plugin 'lifepillar/vim-solarized8'
+" Plugin 'dikiaap/minimalist'
 "" NerdTree
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -98,6 +101,9 @@ if v:version >= 704
 endif
 
 Plugin 'honza/vim-snippets'
+
+"For jumping to definition
+Plugin 'ternjs/tern_for_vim'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -192,10 +198,12 @@ let g:LanguageClient_serverCommands = {
 syntax on
 set ruler
 set number
+set breakindent
 
 let no_buffers_menu=1
 set background=dark
-colorscheme molokai
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 " let g:PaperColor_Theme_Options = {
 "   \   'theme': {
 "   \     'default': {
@@ -278,6 +286,9 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let b:ale_linter_aliases = ['javascript', 'vue']
 " Select the eslint and vls linters.
 let b:ale_linters = ['eslint', 'vls', 'prettier']
+let b:ale_linters = {
+\  'markdown': ['prettier'],
+\}
 
 let g:ale_fixers = {
 \   '*'          : ['remove_trailing_lines', 'trim_whitespace'],
@@ -354,6 +365,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 "" NERDTree configuration
+set modifiable
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -364,6 +376,9 @@ let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
+"Enable mouse click
+:set mouse=a
+let g:NERDTreeMouseMode=3
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
