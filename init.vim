@@ -810,3 +810,9 @@ else
 set autoread
 au CursorHold,CursorHoldI * checktime
 au FocusGained, BufEnter * :checktime
+
+"For easy navigation between pages
+nnoremap <C-J> <C-W><C-J>   "Ctrl + j"
+nnoremap <C-K> <C-W><C-K>   "Ctrl + k"
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
