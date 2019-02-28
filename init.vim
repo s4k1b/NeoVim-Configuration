@@ -816,3 +816,6 @@ nnoremap <C-J> <C-W><C-J>   "Ctrl + j"
 nnoremap <C-K> <C-W><C-K>   "Ctrl + k"
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"For compiling and running CPP files
+map <F8> :!g++ -g  % && ./a.out < input.txt > output.txt<CR>
